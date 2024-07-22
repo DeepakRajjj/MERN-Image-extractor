@@ -12,7 +12,7 @@ const ListPage = () => {
   useEffect(() => {
     const fetchLists = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/lists');
+        const response = await axios.get('https://doggypi-backend.onrender.com/api/lists');
         setLists(response.data);
       } catch (error) {
         console.error('Error fetching lists:', error);
@@ -24,7 +24,7 @@ const ListPage = () => {
 
   const handleSelectList = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/lists/${id}`);
+      const response = await axios.get(`https://doggypi-backend.onrender.com/api/lists/${id}`);
       setSelectedList(response.data);
       setEditMode(false);
     } catch (error) {
@@ -35,7 +35,7 @@ const ListPage = () => {
   const handleEditList = async (id) => {
     try {
       const updatedList = { ...selectedList, name: newListName };
-      const response = await axios.put(`http://localhost:5000/api/lists/${id}`, updatedList);
+      const response = await axios.put(`https://doggypi-backend.onrender.com/api/lists/${id}`, updatedList);
       setLists(lists.map(list => (list._id === response.data._id ? response.data : list)));
       setSelectedList(response.data);
       setEditMode(false);
@@ -47,7 +47,7 @@ const ListPage = () => {
 
   const handleDeleteList = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/lists/${id}`);
+      await axios.delete(`https://doggypi-backend.onrender.com/api/lists/${id}`);
       setLists(lists.filter(list => list._id !== id));
       if (selectedList && selectedList._id === id) {
         setSelectedList(null);
