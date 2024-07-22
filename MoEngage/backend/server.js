@@ -7,10 +7,12 @@ const bcrypt = require('bcrypt');
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors()); 
+app.use(cors());
+
+const dbLink = 'mongodb+srv://moEngage:moengage7654@cluster0.ahiwc19.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://moEngage:moengage7654@cluster0.ahiwc19.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect(dbLink, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
@@ -97,7 +99,6 @@ app.get('/api/lists/:id', async (req, res) => {
   }
 });
 
-
 // Update list
 app.put('/api/lists/:id', async (req, res) => {
   try {
@@ -157,3 +158,4 @@ app.post('/api/auth/login', async (req, res) => {
 app.listen(5000, () => {
   console.log('Server running on port 5000');
 });
+      
