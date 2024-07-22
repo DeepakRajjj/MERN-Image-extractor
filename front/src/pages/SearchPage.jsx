@@ -21,7 +21,7 @@ const SearchPage = () => {
 
     let pattern = responseCode.replace(/x/g, '\\d');
     let regex = new RegExp(`^${pattern}`);
-    const baseUrl = 'http://http.dog/';
+    const baseUrl = 'https://http.dog/';
     const urls = Array.from({ length: 500 }, (_, index) => index + 100)
       .filter((code) => regex.test(code.toString()))
       .map((code) => `${baseUrl}${code}.jpg`);
