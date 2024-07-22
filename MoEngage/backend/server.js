@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const dbLink = 'mongodb+srv://moEngage:moengage7654@cluster0.ahiwc19.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const jwtSecret = 'different_jwt_secret';
 
 // Connect to MongoDB
 mongoose.connect(dbLink, {
@@ -53,7 +54,7 @@ const authenticateToken = (req, res, next) => {
   const token = req.headers['authorization']?.split(' ')[1];
   if (token == null) return res.sendStatus(401);
 
-  jwt.verify(token, 'your_jwt_secret', (err, user) => {
+  jwt.verify(token, jwtSecret, (err, user) => {
     if (err) return res.sendStatus(403);
     req.user = user;
     next();
@@ -151,7 +152,7 @@ app.post('/api/auth/login', async (req, res) => {
   if (!user || !(await bcrypt.compare(password, user.password))) {
     return res.status(401).json({ message: 'Invalid email or password' });
   }
-  const token = jwt.sign({ email: user.email }, 'your_jwt_secret', { expiresIn: '1h' });
+  const token = jwt.sign({ email: user.email }, jwtSecret, { expiresIn: '1h' });
   res.json({ token });
 });
 
