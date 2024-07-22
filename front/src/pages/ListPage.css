@@ -1,0 +1,148 @@
+/* Styles for the List Page */
+.list-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  max-width: 800px; 
+  background: #ffffff; 
+  min-height: 80vh; 
+  margin: 20px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #333;
+  font-weight: bold;
+}
+
+.list-wrapper {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.list-menu-section {
+  margin-bottom: 20px;
+}
+
+.list-menu-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: #007bff;
+}
+
+.list-menu-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.list-menu-section li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-menu-section div {
+  font-size: 1.2em;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.edit-button {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.edit-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.horizontal-line {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+.details-section {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+}
+
+.details-section h2 {
+  background-color: #f0f8ff; 
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.details-section p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.scrollable-image-container {
+  width: 100%;
+  overflow-x: auto; 
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; 
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-grid {
+  display: flex;
+  flex-wrap: nowrap; 
+  gap: 10px;
+  align-items: center;
+}
+
+.image-item {
+  max-width: 150px;
+  max-height: 150px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
