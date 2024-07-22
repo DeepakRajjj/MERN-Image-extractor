@@ -57,7 +57,7 @@ const SearchPage = () => {
     const responseCodes = imageUrls.map(url => url.match(/(\d+)\.jpg$/)[1]);
 
     try {
-      await axios.post('http://localhost:5000/api/lists', {
+      await axios.post('https://doggypi-backend.onrender.com/api/lists', {
         name: listName,
         responseCodes,
         imageLinks: imageUrls
